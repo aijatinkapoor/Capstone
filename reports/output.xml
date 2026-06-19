@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.4 on win32)" generated="2026-06-19T12:06:36.380037" rpa="false" schemaversion="5">
+<suite id="s1" name="TC-API-09" source="C:\Users\muska\Documents\CAPSTONE\CAPSTONE\tests\api\TC-API-09.robot">
+<kw name="Create Session To API" owner="api_keywords" type="SETUP">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-19T12:06:36.759568" level="INFO">${headers} = {'Accept': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Accept=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-19T12:06:36.758624" elapsed="0.001020"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-06-19T12:06:36.760678" level="INFO">Creating Session using : alias=parabank, url=https://parabank.parasoft.com/parabank/services/bank, headers={'Accept': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>parabank</arg>
+<arg>${API_BASE_URL}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-06-19T12:06:36.760256" elapsed="0.000684"/>
+</kw>
+<status status="PASS" start="2026-06-19T12:06:36.757313" elapsed="0.003723"/>
+</kw>
+<test id="s1-t1" name="TC_API_09 Verify Insufficient Funds Transfer" line="6">
+<kw name="Transfer Funds API" owner="api_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-19T12:06:36.768557" level="INFO">${headers} = {'Accept': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Accept=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-19T12:06:36.766818" elapsed="0.001803"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-06-19T12:06:36.769515" level="INFO">${url} = /transfer?fromAccountId=13344&amp;toAccountId=13455&amp;amount=999999</msg>
+<var>${url}</var>
+<arg>/transfer?fromAccountId=${fromAccountId}&amp;toAccountId=${toAccountId}&amp;amount=${amount}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-06-19T12:06:36.768866" elapsed="0.001451"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-06-19T12:07:01.863424" level="INFO">POST Request : url=https://parabank.parasoft.com/parabank/services/bank/transfer?fromAccountId=13344&amp;toAccountId=13455&amp;amount=999999 
+ path_url=/parabank/services/bank/transfer?fromAccountId=13344&amp;toAccountId=13455&amp;amount=999999 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2026-06-19T12:07:01.863811" level="INFO">POST Response : url=https://parabank.parasoft.com/parabank/services/bank/transfer?fromAccountId=13344&amp;toAccountId=13455&amp;amount=999999 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 19 Jun 2026 06:37:01 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'cf-cache-status': 'DYNAMIC', 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip', 'CF-RAY': 'a0e085cc7e463ebe-DEL'} 
+ body=Successfully transferred $999999 from account #13344 to account #13455 
+ </msg>
+<msg time="2026-06-19T12:07:01.864023" level="INFO">C:\Users\muska\Documents\CAPSTONE\CAPSTONE\venv\Lib\site-packages\urllib3\connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'parabank.parasoft.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-06-19T12:07:01.866033" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>parabank</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-06-19T12:06:36.770563" elapsed="25.095585"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-06-19T12:07:01.866520" elapsed="0.000324"/>
+</return>
+<msg time="2026-06-19T12:07:01.867382" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${ACCOUNT_ID}</arg>
+<arg>${ACCOUNT_ID_2}</arg>
+<arg>999999</arg>
+<status status="PASS" start="2026-06-19T12:06:36.765884" elapsed="25.101572"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T12:07:01.868533" elapsed="0.002858"/>
+</kw>
+<kw name="Should Not Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-06-19T12:07:01.876537" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2026-06-19T12:07:01.877020" level="FAIL">200 == 200</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are equal after converting them to integers.</doc>
+<status status="FAIL" start="2026-06-19T12:07:01.874119" elapsed="0.003347">200 == 200</status>
+</kw>
+<doc>Verify transfer fails for insufficient funds</doc>
+<tag>api</tag>
+<status status="FAIL" start="2026-06-19T12:06:36.761112" elapsed="25.120137">200 == 200</status>
+</test>
+<status status="FAIL" start="2026-06-19T12:06:36.382229" elapsed="25.504807"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">api</stat>
+</tag>
+<suite>
+<stat name="TC-API-09" id="s1" pass="0" fail="1" skip="0">TC-API-09</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
