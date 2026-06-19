@@ -16,11 +16,9 @@ TC-TX-UI-02
 
     Wait Until Element Is Visible    ${AMOUNT_FIELD}
     Input Text    ${AMOUNT_FIELD}    50
-    Wait Until Element Is Visible    ${FROM_ACCOUNT_DROPDOWN}
     Wait until keyword succeeds    10s    1s
     ...    Select From List By Index    ${FROM_ACCOUNT_DROPDOWN}    0
-    Wait Until Element Is Visible    ${TO_ACCOUNT_DROPDOWN}
     Wait until keyword succeeds    10s    1s
-    ...    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    2
+    ...    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    0
     Click Transfer Button
     Wait Until Page Contains    Transfer Complete!

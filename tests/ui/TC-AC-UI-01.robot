@@ -16,7 +16,7 @@ TC-AC-UI-01
     Wait Until Location Contains    openaccount
 
     Select Account Type    1
-    Select Account ID    13344
+    wait until keyword Succeeds  10s  1s  Select Account ID    13344
 
     Click Open Account Button
 

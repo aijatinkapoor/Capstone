@@ -17,7 +17,7 @@ TC-TX-UI-03
     Wait Until Keyword Succeeds    10s    1s
     ...    Select From List By Index    ${FROM_ACCOUNT_DROPDOWN}    0
     Wait Until Keyword Succeeds    10s    1s
-    ...    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    2
+    ...    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    0
     Click Transfer Button
 
     Wait Until Page Contains    Error
