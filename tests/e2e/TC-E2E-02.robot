@@ -12,6 +12,7 @@ Test Teardown     Close Application
 *** Test Cases ***
 TC-E2E-02
     [Documentation]    End-to-End Funds Transfer and API Validation Journey
+    [Tags]    e2e   positive
 
     Click Transfer Funds
 

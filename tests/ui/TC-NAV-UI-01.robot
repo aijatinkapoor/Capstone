@@ -9,6 +9,7 @@ Test Teardown     Close Application
 *** Test Cases ***
 TC-NAV-UI-01
     [Documentation]    Verify Navigation Flow and Menu Link Integrity
+    [Tags]    ui   positive
 
     Click Open New Account
     Wait Until Location Contains    openaccount

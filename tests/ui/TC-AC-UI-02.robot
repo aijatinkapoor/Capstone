@@ -11,6 +11,7 @@ Test Teardown     Close Application
 *** Test Cases ***
 TC-AC-UI-02
     [Documentation]    Create Checking Account with Default Funding Options
+    [Tags]    ui   positive
 
     Click Open New Account
     Wait Until Location Contains    openaccount

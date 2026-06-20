@@ -10,6 +10,7 @@ Test Teardown     Close Application
 *** Test Cases ***
 TC-AC-UI-04
     [Documentation]    Verify Open New Account Form Controls
+    [Tags]    ui   positive
 
     Click Open New Account
     Wait Until Location Contains    openaccount

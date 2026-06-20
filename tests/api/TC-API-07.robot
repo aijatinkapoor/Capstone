@@ -7,7 +7,7 @@ Suite Setup    Create Session To API
 
 TC_API_07 Verify Debit Transaction History
     [Documentation]    Verify transaction history for source account
-    [Tags]    api
+    [Tags]    api   positive
 
     ${response}=    Get Account Transactions    ${ACCOUNT_ID}
 

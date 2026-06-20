@@ -6,7 +6,7 @@ Suite Setup    Create Session To API
 *** Test Cases ***
 TC_API_02 Verify Specific Account Details
     [Documentation]    Verify GET account details API
-    [Tags]    api
+    [Tags]    api   positive
 
     ${response}=    Get Account Details    ${ACCOUNT_ID}
 

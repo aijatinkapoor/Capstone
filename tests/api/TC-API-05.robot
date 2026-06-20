@@ -7,7 +7,7 @@ Suite Setup    Create Session To API
 
 TC_API_05 Verify Source Account Balance Debited
     [Documentation]    Verify source account balance after transfer
-    [Tags]    api
+    [Tags]    api   positive
 
     ${response}=    Get Account Details    ${ACCOUNT_ID}
 

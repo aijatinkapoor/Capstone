@@ -7,7 +7,7 @@ Suite Setup    Create Session To API
 
 TC_API_10 Verify Credit Transaction History
     [Documentation]    Verify transaction history for destination account
-    [Tags]    api
+    [Tags]    api   positive
 
     ${response}=    Get Account Transactions    ${ACCOUNT_ID_2}
 

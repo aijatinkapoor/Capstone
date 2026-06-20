@@ -11,6 +11,7 @@ Test Teardown     Close Application
 *** Test Cases ***
 TC-AC-UI-03
     [Documentation]    Navigate to Account Details Screen via Confirmation Banner Link
+    [Tags]    ui   positive
 
     Click Open New Account
     Wait Until Location Contains    openaccount

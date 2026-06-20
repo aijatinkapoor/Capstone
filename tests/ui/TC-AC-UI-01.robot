@@ -11,6 +11,7 @@ Test Teardown     Close Application
 *** Test Cases ***
 TC-AC-UI-01
     [Documentation]    Create Savings Account with Specific Source Funding Account
+    [Tags]    ui   positive
 
     Click Open New Account
     Wait Until Location Contains    openaccount

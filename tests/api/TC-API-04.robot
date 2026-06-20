@@ -7,12 +7,9 @@ Suite Setup    Create Session To API
 
 TC_API_04 Execute Fund Transfer Via API
     [Documentation]    Verify fund transfer API
-    [Tags]    api
+    [Tags]    api   positive
 
-    ${response}=    Transfer Funds API
-    ...    ${ACCOUNT_ID}
-    ...    ${ACCOUNT_ID_2}
-    ...    150
+    ${response}=    Transfer Funds API  ${ACCOUNT_ID}  ${ACCOUNT_ID_2}  150
 
     Verify Response Code    ${response}    200
 

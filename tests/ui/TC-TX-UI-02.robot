@@ -10,15 +10,16 @@ Test Teardown     Close Application
 *** Test Cases ***
 TC-TX-UI-02
     [Documentation]    Execute Fund Transfer from Savings to Checking Account
+    [Tags]    ui   positive
 
     Click Transfer Funds
     Wait Until Location Contains    transfer
 
     Wait Until Element Is Visible    ${AMOUNT_FIELD}
     Input Text    ${AMOUNT_FIELD}    50
-    Wait until keyword succeeds    10s    1s
-    ...    Select From List By Index    ${FROM_ACCOUNT_DROPDOWN}    0
-    Wait until keyword succeeds    10s    1s
-    ...    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    0
+    Wait until keyword succeeds    10s    1s    Select From List By Index    ${FROM_ACCOUNT_DROPDOWN}    0
+
+    Wait until keyword succeeds    10s    1s    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    0
+
     Click Transfer Button
     Wait Until Page Contains    Transfer Complete!

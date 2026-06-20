@@ -8,7 +8,7 @@ Suite Setup    Create Session To API
 
 TC_API_01 Verify Customer Accounts List
     [Documentation]    Verify accounts API
-    [Tags]    api
+    [Tags]    api   positive
 
     
     ${response}=    Get Customer Accounts    ${CUSTOMER_ID}

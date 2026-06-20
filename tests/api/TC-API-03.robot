@@ -7,7 +7,7 @@ Suite Setup    Create Session To API
 
 TC_API_03 Verify Account Exists In Customer Accounts List
     [Documentation]    Verify newly created account exists in customer account list
-    [Tags]    api
+    [Tags]    api   positive
 
     ${response}=    Get Customer Accounts    ${CUSTOMER_ID}
 
