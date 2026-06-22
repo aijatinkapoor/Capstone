@@ -16,7 +16,7 @@ TC-E2E-02
 
     Click Transfer Funds
 
-    Enter Amount    120
+    Enter Amount    200
 
     Select From Account
     
@@ -29,4 +29,4 @@ TC-E2E-02
 
     Verify Response Code    ${response}    200
 
-    Should Contain    ${response.text}    120
+    Should Contain    ${response.text}    200

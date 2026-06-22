@@ -49,10 +49,10 @@ Register User
 
 
     IF    ${already_exists}
-        Log    Username already exists - Negative TC Passed
+        Log    Username already exists - Negative TC
 
     ELSE
         Page Should Contain    Welcome
-        Log    Registration successful - Positive TC Passed
+        Log    Registration successful - Positive TC
 
     END

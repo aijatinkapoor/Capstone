@@ -10,7 +10,7 @@ Test Teardown    Close Application
 
 *** Test Cases ***
 TC-E2E-01
-    [Documentation]    End-to-End Account Provisioning, API Retrieval, and Attribute Verification Journey
+    [Documentation]    End-to-End Account Provisioning, API Retrieval
     [Tags]    e2e   positive
 
     Click Open New Account
