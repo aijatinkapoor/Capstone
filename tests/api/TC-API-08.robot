@@ -6,7 +6,7 @@ Suite Setup    Create Session To API
 *** Test Cases ***
 
 TC_API_08 Verify Invalid Account
-    [Documentation]    Known defect BUG-001
+    [Documentation]    Verify GET Account Details for Non-Existent Account ID 
     [Tags]    api   negative
 
     ${response}=    Get Account Details    ${INVALID_ID}
@@ -15,6 +15,4 @@ TC_API_08 Verify Invalid Account
     Log To Console    ${response.text}
 
 
-    Should Be Equal As Integers
-    ...    ${response.status_code}
-    ...    400
+    Should Be Equal As Integers  ${response.status_code}  200

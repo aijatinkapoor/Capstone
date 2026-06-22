@@ -2,23 +2,37 @@
 Library    SeleniumLibrary
 Resource    ../../variables/register_variables.robot
 
+
 *** Keywords ***
 Register btn
     Click Element    ${register}
-    Sleep    2s
+
 
 Registration
-    Wait Until Element Is Visible    ${fn}    timeout=20s
-    Input Text    ${fn}    Jatin
-    Input Text    ${ln}    Kapoor
-    Input Text    ${add}    jaipur
-    Input Text    ${city}    Jaipur
-    Input Text    ${state}    Rajasthan
-    Input Text    ${zip}    302033
-    Input Text    ${phone}    9876543212
-    Input Text    ${ssn}    223455
-    Input Text    ${user}    jatin123
-    Input Text    ${pass}    Jatin@123
-    Input Text    ${conf_pass}    Jatin@123
+    [Arguments]
+    ...    ${fname}
+    ...    ${lname}
+    ...    ${address}
+    ...    ${city_value}
+    ...    ${state_value}
+    ...    ${zip_value}
+    ...    ${phone_value}
+    ...    ${ssn_value}
+    ...    ${username}
+    ...    ${password}
+
+    Wait Until Element Is Visible    ${fn}
+
+    Input Text    ${fn}    ${fname}
+    Input Text    ${ln}    ${lname}
+    Input Text    ${add}    ${address}
+    Input Text    ${city}    ${city_value}
+    Input Text    ${state}    ${state_value}
+    Input Text    ${zip}    ${zip_value}
+    Input Text    ${phone}    ${phone_value}
+    Input Text    ${ssn}    ${ssn_value}
+    Input Text    ${user}    ${username}
+    Input Text    ${pass}    ${password}
+    Input Text    ${conf_pass}    ${password}
 
     Click Element    ${rgstr_btn}

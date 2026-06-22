@@ -9,7 +9,7 @@ TC_API_06 Verify Destination Account Balance Credited
     [Documentation]    Verify destination account balance after transfer
     [Tags]    api   positive
 
-    ${response}=    Get Account Details    ${ACCOUNT_ID_2}
+    ${response}=    Get Account Details    ${ACCOUNT_ID_2} 
 
     Verify Response Code    ${response}    200
 

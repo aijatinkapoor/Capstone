@@ -38,7 +38,7 @@ Transfer Funds API
 
     ${url}=    Set Variable    /transfer?fromAccountId=${fromAccountId}&toAccountId=${toAccountId}&amount=${amount}
 
-    ${response}=    POST On Session  parabank  url=${url}  headers=${headers}
+    ${response}=    POST On Session  parabank  url=${url}  headers=${headers}   expected_status=any
 
     RETURN    ${response}
 

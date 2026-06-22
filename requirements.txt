@@ -29,3 +29,7 @@ allure-robotframework>=2.13.5
 robotframework-metrics>=3.7.0
 
 pyyaml
+
+robotframework-datadriver
+
+robotframework-excellib

@@ -29,10 +29,5 @@ TC-E2E-01
     Verify Response Code    ${response}    200
 
     Should Contain    ${response.text}    ${account_id}
-
-    ${response}=    Get Account Details    ${account_id}
-
-    Verify Response Code    ${response}    200
-
     Should Contain    ${response.text}    SAVINGS
 

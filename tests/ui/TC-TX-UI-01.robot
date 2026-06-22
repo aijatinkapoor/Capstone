@@ -20,7 +20,7 @@ TC-TX-UI-01
 
     Wait Until Keyword Succeeds    10s    1s    Select From List By Index    ${FROM_ACCOUNT_DROPDOWN}    0
 
-    Wait Until Keyword Succeeds    10s    1s    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    0
+    Wait Until Keyword Succeeds    10s    1s    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    1
 
     Click Transfer Button
     Wait Until Page Contains    Transfer Complete!

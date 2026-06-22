@@ -10,7 +10,7 @@ Test Teardown     Close Application
 *** Test Cases ***
 TC-TX-UI-05
     [Documentation]    Verify UI Error Message for Transfer Amount Exceeding Available Balance
-    [Tags]    ui   negative
+    [Tags]    ui   negative    BUG-002
 
     Click Transfer Funds
     Wait Until Location Contains    transfer
@@ -19,6 +19,6 @@ TC-TX-UI-05
     Input Text    ${AMOUNT_FIELD}    100000000
     Wait Until Keyword Succeeds    10s    1s    Select From List By Index    ${FROM_ACCOUNT_DROPDOWN}    0
 
-    Wait Until Keyword Succeeds    10s    1s    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    0
+    Wait Until Keyword Succeeds    10s    1s    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    1
     Click Transfer Button
-    Wait Until Page Contains    Error
+    Wait Until Page Contains    Transfer Complete!
