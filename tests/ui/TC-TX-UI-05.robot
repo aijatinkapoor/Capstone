@@ -21,4 +21,4 @@ TC-TX-UI-05
 
     Wait Until Keyword Succeeds    10s    1s    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    1
     Click Transfer Button
-    Wait Until Page Contains    Transfer Complete!
+    Page Should not Contain    Transfer Complete!

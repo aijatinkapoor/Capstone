@@ -15,4 +15,4 @@ TC_API_08 Verify Invalid Account
     Log To Console    ${response.text}
 
 
-    Should Be Equal As Integers  ${response.status_code}  200
+    Should Not Be Equal As Integers  ${response.status_code}  200

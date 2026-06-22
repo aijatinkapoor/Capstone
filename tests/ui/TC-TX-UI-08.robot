@@ -8,7 +8,7 @@ Test Setup        Open Application And Login
 Test Teardown     Close Application
 
 *** Test Cases ***
-TC-TX-UI-05
+TC-TX-UI-08
     [Documentation]    Verify UI Error Message if transfer amount is 0
     [Tags]    ui   negative    BUG-004
 
@@ -21,4 +21,4 @@ TC-TX-UI-05
 
     Wait Until Keyword Succeeds    10s    1s    Select From List By Index    ${TO_ACCOUNT_DROPDOWN}    1
     Click Transfer Button
-    Wait Until Page Contains    Transfer Complete!
+    Page Should not Contain    Transfer Complete!
